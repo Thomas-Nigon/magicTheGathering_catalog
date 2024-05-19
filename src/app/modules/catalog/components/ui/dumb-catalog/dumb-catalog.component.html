@@ -1,1 +1,6 @@
 <p>dumb-catalog works!</p>
+<button routerLink="">home</button>
+<h1>CATALOG:</h1>
+<div *ngFor="let card of cardList">
+  <img class="card-image" *ngIf="card.imageUrl" [src]="card.imageUrl" alt="" />
+</div>
