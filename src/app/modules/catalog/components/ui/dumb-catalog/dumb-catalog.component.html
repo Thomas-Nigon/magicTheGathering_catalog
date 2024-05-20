@@ -2,5 +2,10 @@
 <button routerLink="">home</button>
 <h1>CATALOG:</h1>
 <div *ngFor="let card of cardList">
-  <img class="card-image" *ngIf="card.imageUrl" [src]="card.imageUrl" alt="" />
+  <img
+    *ngIf="card.border_color == 'black'"
+    class="card-image"
+    [src]="card.image_uris.normal"
+    alt=""
+  />
 </div>

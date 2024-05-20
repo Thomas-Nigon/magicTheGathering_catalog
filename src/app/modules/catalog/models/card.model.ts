@@ -1,6 +1,7 @@
 export interface Card {
   name: string;
   artist: string;
+  border_color: string;
   cmc: number;
   colorIdentity: string;
   colors: string[];
@@ -25,4 +26,12 @@ export interface Card {
   type: string;
   types: string[];
   variations: string[];
+  image_uris: {
+    small: string;
+    normal: string;
+    large: string;
+    png: string;
+    art_crop: string;
+    border_crop: string;
+  };
 }
