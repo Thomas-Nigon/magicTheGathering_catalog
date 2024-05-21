@@ -4,6 +4,7 @@ import { Color } from '../models/color.model';
 import { Observable, expand, reduce } from 'rxjs';
 import { ApiResponse } from '../models/apiResponse.model';
 import { Card } from '../models/card.model';
+import { Type } from '../models/type.model';
 import { scryApiResponse } from '../models/scryApiResponse.model';
 
 const apiUrl: string =
@@ -31,5 +32,8 @@ export class CardsService {
   }
   getColorArray(): Observable<Color[]> {
     return this.http.get<Color[]>('assets/colorSelector.json');
+  }
+  getTypeArray(): Observable<Type[]> {
+    return this.http.get<Type[]>('assets/typeSelector.json');
   }
 }

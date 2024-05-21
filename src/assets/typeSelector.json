@@ -1,0 +1,9 @@
+[
+  { "value": "all", "text": "ALL" },
+  { "value": "Creature", "text": "Creature" },
+  { "value": "Instant", "text": "Instant" },
+  { "value": "Sorcery", "text": "Sorcery" },
+  { "value": "Enchantment", "text": "Enchantment" },
+  { "value": "Artifact", "text": "Artifact" },
+  { "value": "Land", "text": "Land" }
+]

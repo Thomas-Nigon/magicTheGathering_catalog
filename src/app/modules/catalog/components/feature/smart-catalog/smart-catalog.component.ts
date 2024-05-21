@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Card } from '../../../models/card.model';
 import { Color } from '../../../models/color.model';
+import { Type } from '../../../models/type.model';
 import { CardsService } from '../../../shared/cards.service';
 
 @Component({
@@ -12,8 +13,9 @@ export class SmartCatalogComponent {
   cardList: Card[] = [];
   filteredCardList: Card[] = [];
   cardColors: Color[] = [];
-  cardTypes: string[] = [];
-  selectedColor: string = 'W';
+  cardTypes: Type[] = [];
+  selectedColor: string = '';
+  selectedType: string = '';
   private cardService = inject(CardsService);
   ngOnInit(): void {
     this.cardService.getAllResults().subscribe((fetchedData) => {
@@ -22,7 +24,7 @@ export class SmartCatalogComponent {
       this.filteredCardList = this.cardList;
       console.log('mes cartes', this.cardList);
       getColorArray();
-      getCardType();
+      getTypeArray();
     });
 
     /* const getColors = (): void => {
@@ -34,33 +36,66 @@ export class SmartCatalogComponent {
       console.log('cardColors:', this.uniqueColors);
     }; */
 
-    const getCardType = (): void => {
+    /*   const getCardType = (): void => {
       this.cardList.map((card: any) => {
         this.cardTypes.includes(card.type_line)
           ? ''
           : this.cardTypes.push(card.type_line);
       });
       console.log('cardTypes:', this.cardTypes);
-    };
+    }; */
 
     const getColorArray = (): void => {
       this.cardService.getColorArray().subscribe((fetchedData) => {
         this.cardColors = fetchedData;
       });
     };
+    const getTypeArray = (): void => {
+      this.cardService.getTypeArray().subscribe((fetchedData) => {
+        this.cardTypes = fetchedData;
+        console.log(this.cardTypes);
+      });
+    };
   }
+  onGetTypeChange = (type: string): void => {
+    this.selectedType = type;
+    console.log('I received a change!!, new type is:', type);
 
-  onGetFilterChange = (color: string): void => {
+    console.log('new type will be:', this.selectedType);
+    this.filterCardsByType();
+  };
+  filterCardsByType = () => {
+    this.selectedColor === 'all'
+      ? (this.filteredCardList = this.cardList)
+      : (this.filteredCardList = this.cardList.filter((card) => {
+          return card.type_line.includes(this.selectedColor);
+        }));
+    console.log('my filteredcards:', this.filteredCardList);
+  };
+
+  /*  onGetFilterChange = (color: string): void => {
     this.selectedColor = color;
     console.log('I received a change!!, new color is:', color);
 
     console.log('new color will be:', this.selectedColor);
-    this.filterCards();
-  };
-  filterCards = () => {
-    this.filteredCardList = this.cardList.filter((card) => {
-      return card.colors.includes(this.selectedColor);
-    });
-    console.log('my filteredcards:', this.filteredCardList);
-  };
+    this.filterCardsByType();
+  }; */
 }
+
+/*   onGetFilterChange = (color: string): void => {
+    this.selectedColor = color;
+    console.log('I received a change!!, new color is:', color);
+
+    console.log('new color will be:', this.selectedColor);
+    this.filterCardsByType();
+  }; */
+/* filterCards = () => {
+    console.log('selected color:', this.selectedColor);
+    console.log('cardList:', this.cardList);
+    this.selectedColor === 'all'
+      ? (this.filteredCardList = this.cardList)
+      : (this.filteredCardList = this.cardList.filter((card) => {
+          return card.colors.includes(this.selectedColor);
+        }));
+    console.log('my filteredcards:', this.filteredCardList);
+  }; */
