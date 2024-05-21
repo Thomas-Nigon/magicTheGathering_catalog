@@ -1,14 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import {
-  Observable,
-  concatMap,
-  expand,
-  filter,
-  of,
-  reduce,
-  takeWhile,
-} from 'rxjs';
+import { Color } from '../models/color.model';
+import { Observable, expand, reduce } from 'rxjs';
 import { ApiResponse } from '../models/apiResponse.model';
 import { Card } from '../models/card.model';
 import { scryApiResponse } from '../models/scryApiResponse.model';
@@ -35,5 +28,8 @@ export class CardsService {
       expand((res) => (res.next_page ? this.http.get(res.next_page) : '')),
       reduce((acc, res: any) => acc.concat(res.data), [])
     );
+  }
+  getColorArray(): Observable<Color[]> {
+    return this.http.get<Color[]>('assets/colorSelector.json');
   }
 }

@@ -1,9 +1,11 @@
 export interface Card {
+  type_line: string;
   name: string;
   artist: string;
   border_color: string;
   cmc: number;
   colorIdentity: string;
+  color_identity: string[];
   colors: string[];
   foreignNames: object[];
   id: string;

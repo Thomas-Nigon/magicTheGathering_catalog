@@ -1,1 +1,7 @@
-<app-dumb-catalog [cardList]="cardList" />
+<app-dumb-catalog
+  [cardList]="cardList"
+  [uniqueColors]="cardColors"
+  (filterChange)="onGetFilterChange($event)"
+  [selectedColor]="selectedColor"
+  [filteredcardList]="filteredCardList"
+/>
