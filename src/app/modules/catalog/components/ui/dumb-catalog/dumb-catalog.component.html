@@ -1,1 +1,24 @@
-<p>dumb-catalog works!</p>
+<button routerLink="">home</button>
+<h1>CATALOG:</h1>
+<select name="type filter" (change)="onTypeChange($event)" default="ALL">
+  <option *ngFor="let type of typeSelector" value="{{ type.value }}">
+    {{ type.text }}
+  </option>
+</select>
+
+<main class="catalog">
+  <article class="catalog__card" *ngFor="let card of filteredcardList">
+    <img
+      *ngIf="card.border_color == 'black'"
+      class="card-image"
+      [src]="card.image_uris.normal"
+      alt=""
+    />
+  </article>
+</main>
+
+<!-- <select name="color filter" (change)="onColorChange($event)" default="ALL">
+  <option *ngFor="let color of uniqueColors" value="{{ color.value }}">
+    {{ color.text }}
+  </option>
+</select> -->

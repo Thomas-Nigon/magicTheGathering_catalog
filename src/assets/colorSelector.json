@@ -1,0 +1,46 @@
+[
+  {
+    "value": "all",
+    "text": "ALL"
+  },
+  {
+    "value": "W",
+    "text": "White"
+  },
+  {
+    "value": "U",
+    "text": "Blue"
+  },
+  {
+    "value": "B",
+    "text": "Black"
+  },
+  {
+    "value": "R",
+    "text": "Red"
+  },
+  {
+    "value": "G",
+    "text": "Green"
+  },
+  {
+    "value": "U,W",
+    "text": "Blue and White"
+  },
+  {
+    "value": "G,W",
+    "text": "Green and White"
+  },
+  {
+    "value": "G,R",
+    "text": "Green and Red"
+  },
+  {
+    "value": "B,R",
+    "text": "Black and Red"
+  },
+  {
+    "value": "B,U",
+    "text": "Black and Blue"
+  }
+]
