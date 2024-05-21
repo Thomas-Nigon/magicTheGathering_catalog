@@ -58,6 +58,12 @@ export class SmartCatalogComponent {
         }));
     console.log('my filteredcards:', this.filteredCardList);
   };
+
+  onGetColorChange = (color: string): void => {
+    console.log(color);
+    this.selectedColor = color;
+    console.log('color changed:', this.selectedColor);
+  };
 }
 
 /*  onGetColorChange = (color: string): void => {
