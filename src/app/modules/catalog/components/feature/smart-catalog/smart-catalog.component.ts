@@ -17,27 +17,30 @@ export class SmartCatalogComponent {
   selectedColor: string = '';
   selectedType: string = '';
   private cardService = inject(CardsService);
+
   ngOnInit(): void {
     this.cardService.getAllResults().subscribe((fetchedData) => {
       console.log(fetchedData);
       this.cardList = fetchedData;
       this.filteredCardList = this.cardList;
       console.log('mes cartes', this.cardList);
-      getColorArray();
-      getTypeArray();
+      this.getColorArray();
+      this.getTypeArray();
     });
-    const getColorArray = (): void => {
-      this.cardService.getColorArray().subscribe((fetchedData) => {
-        this.cardColors = fetchedData;
-      });
-    };
-    const getTypeArray = (): void => {
-      this.cardService.getTypeArray().subscribe((fetchedData) => {
-        this.cardTypes = fetchedData;
-        console.log(this.cardTypes);
-      });
-    };
   }
+
+  getColorArray = (): void => {
+    this.cardService.getColorArray().subscribe((fetchedData) => {
+      this.cardColors = fetchedData;
+    });
+  };
+
+  getTypeArray = (): void => {
+    this.cardService.getTypeArray().subscribe((fetchedData) => {
+      this.cardTypes = fetchedData;
+      console.log(this.cardTypes);
+    });
+  };
 
   onGetTypeChange = (type: string): void => {
     this.selectedType = type;
