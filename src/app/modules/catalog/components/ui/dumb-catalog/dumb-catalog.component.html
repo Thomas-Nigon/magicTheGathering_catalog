@@ -5,11 +5,11 @@
     {{ type.text }}
   </option>
 </select>
-<!-- <select name="color filter" (change)="onColorChange($event)" default="ALL">
+<select name="color filter" (change)="onColorChange($event)" default="ALL">
   <option *ngFor="let color of uniqueColors" value="{{ color.value }}">
     {{ color.text }}
   </option>
-</select> -->
+</select>
 
 <main class="catalog">
   <article class="catalog__card" *ngFor="let card of filteredcardList">

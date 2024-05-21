@@ -26,25 +26,6 @@ export class SmartCatalogComponent {
       getColorArray();
       getTypeArray();
     });
-
-    /* const getColors = (): void => {
-      this.cardList.map((card: any) => {
-        this.uniqueColors.includes(card.color_identity.toString())
-          ? ''
-          : this.uniqueColors.push(card.color_identity.toString());
-      });
-      console.log('cardColors:', this.uniqueColors);
-    }; */
-
-    /*   const getCardType = (): void => {
-      this.cardList.map((card: any) => {
-        this.cardTypes.includes(card.type_line)
-          ? ''
-          : this.cardTypes.push(card.type_line);
-      });
-      console.log('cardTypes:', this.cardTypes);
-    }; */
-
     const getColorArray = (): void => {
       this.cardService.getColorArray().subscribe((fetchedData) => {
         this.cardColors = fetchedData;
@@ -57,6 +38,7 @@ export class SmartCatalogComponent {
       });
     };
   }
+
   onGetTypeChange = (type: string): void => {
     this.selectedType = type;
     console.log('I received a change!!, new type is:', type);
@@ -64,22 +46,32 @@ export class SmartCatalogComponent {
     console.log('new type will be:', this.selectedType);
     this.filterCardsByType();
   };
+
   filterCardsByType = () => {
-    this.selectedColor === 'all'
+    this.selectedType === 'all'
       ? (this.filteredCardList = this.cardList)
       : (this.filteredCardList = this.cardList.filter((card) => {
-          return card.type_line.includes(this.selectedColor);
+          return card.type_line.includes(this.selectedType);
         }));
     console.log('my filteredcards:', this.filteredCardList);
   };
 
-  /*  onGetFilterChange = (color: string): void => {
+  onGetColorChange = (color: string): void => {
     this.selectedColor = color;
     console.log('I received a change!!, new color is:', color);
 
     console.log('new color will be:', this.selectedColor);
-    this.filterCardsByType();
-  }; */
+    this.filterCardsByColor();
+  };
+  filterCardsByColor = () => {
+    /*    this.selectedColor === 'all'
+      ? (this.filteredCardList = this.cardList)
+      : (this.filteredCardList = this.cardList.filter((card) => {
+          return card.colors.includes(this.selectedColor);
+        }));
+    console.log('my filteredcards:', this.filteredCardList); */
+    console.log('entering second layer of filter');
+  };
 }
 
 /*   onGetFilterChange = (color: string): void => {
@@ -99,3 +91,21 @@ export class SmartCatalogComponent {
         }));
     console.log('my filteredcards:', this.filteredCardList);
   }; */
+
+/* const getColors = (): void => {
+      this.cardList.map((card: any) => {
+        this.uniqueColors.includes(card.color_identity.toString())
+          ? ''
+          : this.uniqueColors.push(card.color_identity.toString());
+      });
+      console.log('cardColors:', this.uniqueColors);
+    }; */
+
+/*   const getCardType = (): void => {
+      this.cardList.map((card: any) => {
+        this.cardTypes.includes(card.type_line)
+          ? ''
+          : this.cardTypes.push(card.type_line);
+      });
+      console.log('cardTypes:', this.cardTypes);
+    }; */
