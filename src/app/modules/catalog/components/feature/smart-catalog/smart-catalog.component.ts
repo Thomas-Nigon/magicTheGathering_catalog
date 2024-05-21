@@ -55,8 +55,9 @@ export class SmartCatalogComponent {
         }));
     console.log('my filteredcards:', this.filteredCardList);
   };
+}
 
-  onGetColorChange = (color: string): void => {
+/*  onGetColorChange = (color: string): void => {
     this.selectedColor = color;
     console.log('I received a change!!, new color is:', color);
 
@@ -64,32 +65,13 @@ export class SmartCatalogComponent {
     this.filterCardsByColor();
   };
   filterCardsByColor = () => {
-    /*    this.selectedColor === 'all'
-      ? (this.filteredCardList = this.cardList)
-      : (this.filteredCardList = this.cardList.filter((card) => {
-          return card.colors.includes(this.selectedColor);
-        }));
-    console.log('my filteredcards:', this.filteredCardList); */
-    console.log('entering second layer of filter');
-  };
-}
-
-/*   onGetFilterChange = (color: string): void => {
-    this.selectedColor = color;
-    console.log('I received a change!!, new color is:', color);
-
-    console.log('new color will be:', this.selectedColor);
-    this.filterCardsByType();
-  }; */
-/* filterCards = () => {
-    console.log('selected color:', this.selectedColor);
-    console.log('cardList:', this.cardList);
     this.selectedColor === 'all'
       ? (this.filteredCardList = this.cardList)
       : (this.filteredCardList = this.cardList.filter((card) => {
           return card.colors.includes(this.selectedColor);
         }));
     console.log('my filteredcards:', this.filteredCardList);
+    console.log('entering second layer of filter');
   }; */
 
 /* const getColors = (): void => {
