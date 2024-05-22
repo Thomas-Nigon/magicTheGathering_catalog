@@ -1,1 +1,33 @@
-<p>dumb-log-in works!</p>
+<h1>inside login component</h1>
+
+<div>
+  <form [formGroup]="loginForm">
+    <div>
+      <h1>User:</h1>
+      <label>
+        Username:
+        <input type="text" formControlName="username" required />
+      </label>
+      <span *ngIf="loginForm.get('userName')?.invalid">
+        Please enter a Username
+      </span>
+    </div>
+    <div formGroupName="credentials">
+      <label>
+        Email:
+        <input type="email" formControlName="email" required email />
+      </label>
+      <span *ngIf="loginForm.get('credentials.email')?.invalid">
+        Please enter a VALID EMAIL
+      </span>
+      <label>
+        Password:
+        <input type="text" formControlName="password" required />
+      </label>
+      <span *ngIf="loginForm.get('credentials.password')?.invalid">
+        Please enter a password
+      </span>
+      <button type="submit" [disabled]="!loginForm.valid">Submit</button>
+    </div>
+  </form>
+</div>
