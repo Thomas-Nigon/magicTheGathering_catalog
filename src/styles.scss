@@ -1,5 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Allura&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+$navyBlue: #003366;
+$coral: #ff6b6b;
+$teal: #008080;
+$softGray: #c0c0c0;
+$white: #ffffff;
+
+//colors
+$darkerMain: #123c54;
+$darkerMainTrans: rgba(18, 60, 84, 0.7);
+$darkMain: #184e5b;
+$accent: #ff6b6b;
+$main: #81a5ae;
+$lighterMain: #c0c0c0;
+$white: #ffffff;
+$lightFont: beige;
+
+//fonts
+$titleFont: "Roboto", sans-serif;
+$handFont: "Allura", cursive;
+$textFont: "Lato", sans-serif;
+
 * {
   margin: 0;
   padding: 0;
+  color: $lightFont;
+  font-family: $textFont;
+  box-sizing: border-box;
 }

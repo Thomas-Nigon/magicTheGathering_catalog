@@ -9,4 +9,17 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class DumbLogInComponent {
   @Input() loginForm!: FormGroup;
+
+  @Output() submit = new EventEmitter<User>();
+  isFocused: boolean = false;
+  onGetSubmit(): void {
+    this.submit.emit();
+  }
+
+  onFocus() {
+    this.isFocused = true;
+  }
+  onBlur() {
+    this.isFocused = false;
+  }
 }

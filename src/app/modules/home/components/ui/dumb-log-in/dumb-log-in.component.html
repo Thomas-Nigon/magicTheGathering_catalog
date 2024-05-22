@@ -1,33 +1,38 @@
-<h1>inside login component</h1>
-
-<div>
-  <form [formGroup]="loginForm">
-    <div>
-      <h1>User:</h1>
-      <label>
-        Username:
-        <input type="text" formControlName="username" required />
-      </label>
-      <span *ngIf="loginForm.get('userName')?.invalid">
-        Please enter a Username
+<main class="loginForm__container">
+  <h1>Login form</h1>
+  <form class="login__form" [formGroup]="loginForm" (submit)="onGetSubmit()">
+    <div class="login__form__container" formGroupName="credentials">
+      <input
+        class="loginForm-input"
+        [ngClass]="{
+          invalid: loginForm.get('credentials.email')?.invalid && isFocused
+        }"
+        type="email"
+        placeholder="Email..."
+        formControlName="email"
+        required
+        email
+        (focus)="onFocus()"
+        (blur)="onBlur()"
+      />
+      <span *ngIf="loginForm.get('credentials.email')?.invalid && isFocused">
+        Please enter a valid email
       </span>
-    </div>
-    <div formGroupName="credentials">
-      <label>
-        Email:
-        <input type="email" formControlName="email" required email />
-      </label>
-      <span *ngIf="loginForm.get('credentials.email')?.invalid">
-        Please enter a VALID EMAIL
-      </span>
-      <label>
-        Password:
-        <input type="text" formControlName="password" required />
-      </label>
-      <span *ngIf="loginForm.get('credentials.password')?.invalid">
-        Please enter a password
-      </span>
-      <button type="submit" [disabled]="!loginForm.valid">Submit</button>
+      <input
+        class="loginForm-input"
+        type="text"
+        placeholder="Password..."
+        formControlName="password"
+        required
+      />
+      <button
+        class="loginForm-button"
+        type="submit"
+        [disabled]="!loginForm.valid"
+      >
+        Submit
+      </button>
+      <a routerLink="/register"> Create an account </a>
     </div>
   </form>
-</div>
+</main>

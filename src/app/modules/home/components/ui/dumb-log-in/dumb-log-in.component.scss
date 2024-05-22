@@ -1,0 +1,56 @@
+@import "../../../../../../styles.scss";
+.loginForm__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login__form {
+  width: 80vw;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.login__form__container {
+  border: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.loginForm-input {
+  all: unset;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin: 1rem 0;
+  background-color: $lightFont;
+  border: 2px solid $darkMain;
+  box-sizing: border-box;
+  width: 100%;
+}
+.loginForm-input:focus {
+  background-color: $white;
+  color: $darkerMain;
+}
+.loginForm-button {
+  background-color: $lightFont;
+  color: $darkerMain;
+  font-weight: bold;
+  font-size: 1rem;
+  width: 50%;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin: 1rem 0;
+  border: 2px solid $darkMain;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.loginForm-button:disabled {
+  background-color: lightgray;
+  color: darkgray;
+  cursor: not-allowed;
+}
+.invalid {
+  border-color: red;
+}

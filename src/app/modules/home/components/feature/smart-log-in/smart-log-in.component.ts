@@ -8,13 +8,10 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrl: './smart-log-in.component.scss',
 })
 export class SmartLogInComponent {
-  onLogIn(user: User) {
-    console.log(user);
-  }
-
-  public newUser: User | undefined;
+  /*   public newUser: User | undefined; */
 
   constructor(private fb: FormBuilder) {}
+
   public userForm = this.fb.group({
     username: [''],
     credentials: this.fb.group({
@@ -24,5 +21,6 @@ export class SmartLogInComponent {
   });
   onSubmit(): void {
     console.log(this.userForm.value.credentials);
+    console.log('to the backend');
   }
 }
