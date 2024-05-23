@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { User } from '../../../models/user.model';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-smart-log-in',
@@ -8,8 +7,6 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrl: './smart-log-in.component.scss',
 })
 export class SmartLogInComponent {
-  /*   public newUser: User | undefined; */
-
   constructor(private fb: FormBuilder) {}
 
   public userForm = this.fb.group({
