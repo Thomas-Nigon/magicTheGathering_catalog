@@ -19,4 +19,8 @@
     box-sizing: border-box;
     width: 100%;
   }
+  .signin__Form-input:focus {
+    background-color: $white;
+    color: $darkerMain;
+  }
 }
