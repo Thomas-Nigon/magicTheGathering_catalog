@@ -1,0 +1,38 @@
+<main class="loginForm__container">
+  <h1>Login form</h1>
+  <form class="login__form" [formGroup]="loginForm" (submit)="onGetSubmit()">
+    <div class="login__form__container" formGroupName="credentials">
+      <input
+        class="loginForm-input"
+        [ngClass]="{
+          invalid: loginForm.get('credentials.email')?.invalid && isFocused
+        }"
+        type="email"
+        placeholder="Email..."
+        formControlName="email"
+        required
+        email
+        (focus)="onFocus()"
+        (blur)="onBlur()"
+      />
+      <span *ngIf="loginForm.get('credentials.email')?.invalid && isFocused">
+        Please enter a valid email
+      </span>
+      <input
+        class="loginForm-input"
+        type="text"
+        placeholder="Password..."
+        formControlName="password"
+        required
+      />
+      <button
+        class="loginForm-button"
+        type="submit"
+        [disabled]="!loginForm.valid"
+      >
+        Submit
+      </button>
+      <a routerLink="/register"> Create an account </a>
+    </div>
+  </form>
+</main>

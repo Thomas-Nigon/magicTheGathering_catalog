@@ -1,0 +1,26 @@
+@import "../../../../../../styles.scss";
+
+.signin__container {
+  margin-top: 15vh;
+}
+.signin-title {
+  margin-bottom: 2vh;
+}
+.signin__form {
+  display: flex;
+  flex-direction: column;
+  .signin__Form-input {
+    all: unset;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin: 1rem 0;
+    background-color: $lightFont;
+    border: 2px solid $darkMain;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  .signin__Form-input:focus {
+    background-color: $white;
+    color: $darkerMain;
+  }
+}
