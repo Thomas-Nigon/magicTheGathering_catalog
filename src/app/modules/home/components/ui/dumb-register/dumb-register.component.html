@@ -16,7 +16,7 @@
       formControlName="username"
       required
     />
-    <div formGroupName="credentials">
+    <div class="register__Form-credentials" formGroupName="credentials">
       <input
         class="register__Form-input"
         [ngClass]="{
@@ -28,29 +28,47 @@
         required
         email
       />
-      <input
-        class="register__Form-input"
-        [ngClass]="{
-          invalid: registerForm.get('credentials.password')?.invalid
-        }"
-        type="text"
-        placeholder="Password:"
-        formControlName="password"
-        autocomplete="on"
-        required
-      />
-      <input
-        class="register__Form-input"
-        [ngClass]="{
-          invalid: registerForm.get('credentials.confirmPassword')?.invalid
-        }"
-        type="text"
-        placeholder="Confirm password:"
-        formControlName="confirmPassword"
-        autocomplete="on"
-        required
-      />
+      <article class="input-container">
+        <input
+          class="register__Form-input"
+          [ngClass]="{
+            invalid: registerForm.get('credentials.password')?.invalid
+          }"
+          [type]="pwdHidden ? 'password' : 'text'"
+          placeholder="Password:"
+          formControlName="password"
+          autocomplete="on"
+          required
+        />
+        <img
+          (click)="togglePasswordView()"
+          class="input-icon"
+          ngSwitch=""
+          [src]="pwdImgSrc"
+          alt=""
+        />
+      </article>
+      <article class="input-container">
+        <input
+          class="register__Form-input"
+          [ngClass]="{
+            invalid: registerForm.get('credentials.confirmPassword')?.invalid
+          }"
+          [type]="confirmPwdHidden ? 'password' : 'text'"
+          placeholder="Confirm password:"
+          formControlName="confirmPassword"
+          autocomplete="on"
+          required
+        />
+        <img
+          (click)="toggleConfirPwdView()"
+          class="input-icon"
+          [src]="confirmPwdImgSrc"
+          alt=""
+        />
+      </article>
     </div>
+
     <button class="registerForm-button">Register</button>
   </form>
 </main>

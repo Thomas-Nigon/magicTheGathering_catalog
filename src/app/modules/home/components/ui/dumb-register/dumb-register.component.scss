@@ -18,6 +18,10 @@
   align-items: center;
   justify-content: center;
 }
+.register__Form-credentials {
+  width: 80vw;
+  max-width: 600px;
+}
 .register__Form-input {
   all: unset;
   color: $darkerMain;
@@ -50,6 +54,15 @@
   background-color: lightgray;
   color: darkgray;
   cursor: not-allowed;
+}
+.input-container {
+  position: relative;
+}
+.input-icon {
+  position: absolute;
+  top: 32%;
+  right: 6%;
+  width: 35px;
 }
 
 .invalid {

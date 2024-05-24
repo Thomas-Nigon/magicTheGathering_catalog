@@ -11,7 +11,27 @@ export class DumbRegisterComponent {
   @Input() registerForm!: FormGroup;
 
   @Output() submitRegisterForm = new EventEmitter<User>();
+
+  pwdHidden: boolean = false;
+  confirmPwdHidden: boolean = false;
+
   OnGetSubmitForm(): void {
     this.submitRegisterForm.emit();
+  }
+  togglePasswordView() {
+    this.pwdHidden = !this.pwdHidden;
+  }
+  toggleConfirPwdView() {
+    this.confirmPwdHidden = !this.confirmPwdHidden;
+  }
+  get pwdImgSrc(): string {
+    return this.pwdHidden
+      ? '../../../../assets/icons/eyeIcon.svg'
+      : '../../../../assets/icons/closedeyeIcon.svg';
+  }
+  get confirmPwdImgSrc(): string {
+    return this.confirmPwdHidden
+      ? '../../../../assets/icons/eyeIcon.svg'
+      : '../../../../assets/icons/closedeyeIcon.svg';
   }
 }
