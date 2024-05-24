@@ -1,8 +1,15 @@
-<!-- <button routerLink="/user">User page</button>
-<button routerLink="/catalog">catalog page</button> -->
-<main class="home__container">
-  <h1 class="home-title">Magic The Gathering</h1>
-  <h2 class="home-title2">deckBuilder</h2>
-  <app-smart-sign-in />
-  <app-smart-log-in />
+<main>
+  <h1>welcome on MTG Deck builder</h1>
+  <app-smart-search-card />
+
+  <section>
+    <h3>Or click here to find a random card !</h3>
+    <button class="home-button" (click)="onGetclick()">random Card!</button>
+    @if (myCard){
+
+    <article>
+      <img src="{{ myCard.image_uris.normal }}" alt="" />
+    </article>
+    }
+  </section>
 </main>

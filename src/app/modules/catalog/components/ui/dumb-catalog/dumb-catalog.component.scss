@@ -1,10 +1,27 @@
-.catalog {
+@import "../../../../../../styles.scss";
+
+.catalog__container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.catalog-select {
+  color: $darkMain;
+  width: 60vw;
+  max-width: 200px;
+}
+.catalog__cardContainer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  padding: 1rem;
+  justify-content: space-evenly;
 }
 .catalog__card {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
   .card-image {
     max-width: 300px;
+    height: auto;
   }
 }

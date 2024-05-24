@@ -1,10 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Card } from '../../../../catalog/models/card.model';
 
 @Component({
   selector: 'app-dumb-home',
   templateUrl: './dumb-home.component.html',
-  styleUrl: './dumb-home.component.scss'
+  styleUrl: './dumb-home.component.scss',
 })
 export class DumbHomeComponent {
+  @Input() myCard: Card = {} as Card;
+  @Output() submit = new EventEmitter();
 
+  onGetclick(): void {
+    this.submit.emit();
+  }
 }

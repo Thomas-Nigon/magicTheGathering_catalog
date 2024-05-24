@@ -1,0 +1,55 @@
+@import "../../../../styles.scss";
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1rem;
+  background-color: rgba($color: #000000, $alpha: 0.3);
+}
+.header-title {
+  display: flex;
+  width: 100%;
+}
+.header-title-span {
+  padding-left: 1rem;
+}
+.header__navbar {
+  display: flex;
+  gap: 1.3rem;
+  width: 100%;
+  justify-content: space-around;
+  margin-top: 1rem;
+  margin-right: 0.5rem;
+}
+.header__menu-button {
+  all: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.header__menu-button:hover {
+  scale: 1.4;
+}
+.header__menu-button-span {
+  display: none;
+}
+/* .header__menu-icon {
+  cursor: pointer;
+} */
+@media screen and (min-width: 700px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header__navbar {
+    justify-content: end;
+    margin-top: 0;
+  }
+  .header__menu-button-span {
+    display: block;
+  }
+}
