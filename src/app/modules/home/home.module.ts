@@ -10,6 +10,11 @@ import { DumbLogInComponent } from './components/ui/dumb-log-in/dumb-log-in.comp
 import { ReactiveFormsModule } from '@angular/forms';
 import { SmartSignInComponent } from './components/feature/smart-sign-in/smart-sign-in.component';
 import { DumbSignInComponent } from './components/ui/dumb-sign-in/dumb-sign-in.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { SigninPageComponent } from './pages/signin-page/signin-page.component';
+import { SmartNavbarComponent } from '../../components/feature/smart-navbar/smart-navbar.component';
+import { SmartSearchCardComponent } from './components/feature/smart-search-card/smart-search-card.component';
+import { DumbSearchCardComponent } from './components/ui/dumb-search-card/dumb-search-card.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +25,10 @@ import { DumbSignInComponent } from './components/ui/dumb-sign-in/dumb-sign-in.c
     DumbLogInComponent,
     SmartSignInComponent,
     DumbSignInComponent,
+    LoginPageComponent,
+    SigninPageComponent,
+    SmartSearchCardComponent,
+    DumbSearchCardComponent,
   ],
   imports: [CommonModule, HomeRoutingModule, ReactiveFormsModule],
 })
