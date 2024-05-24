@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DumbSignInComponent } from './dumb-sign-in.component';
+import { DumbSignInComponent } from './dumb-register.component';
 
 describe('DumbSignInComponent', () => {
   let component: DumbSignInComponent;
@@ -8,10 +8,9 @@ describe('DumbSignInComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [DumbSignInComponent]
-    })
-    .compileComponents();
-    
+      declarations: [DumbSignInComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(DumbSignInComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
