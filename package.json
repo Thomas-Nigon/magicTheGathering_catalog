@@ -18,6 +18,7 @@
     "@angular/platform-browser": "^17.3.0",
     "@angular/platform-browser-dynamic": "^17.3.0",
     "@angular/router": "^17.3.0",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "axios": "^1.6.8",
     "rxjs": "~7.8.0",
     "scryfall-sdk": "^4.2.2",

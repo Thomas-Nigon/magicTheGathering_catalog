@@ -1,0 +1,70 @@
+@import "../../../../../../styles.scss";
+
+.register__container {
+  margin-top: 15vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.register-title {
+  margin-bottom: 2vh;
+}
+.register__form {
+  color: $darkerMain;
+  width: 80vw;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.register__Form-credentials {
+  width: 80vw;
+  max-width: 600px;
+}
+.register__Form-input {
+  all: unset;
+  color: $darkerMain;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin: 1rem 0;
+  background-color: $lightFont;
+  border: 2px solid $darkMain;
+  box-sizing: border-box;
+  width: 100%;
+}
+.register__Form-input:focus {
+  background-color: $white;
+  color: $darkerMain;
+}
+.registerForm-button {
+  background-color: $lightFont;
+  color: $darkerMain;
+  font-weight: bold;
+  font-size: 1rem;
+  width: 50%;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin: 1rem 0;
+  border: 2px solid $darkMain;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.registerForm-button:disabled {
+  background-color: lightgray;
+  color: darkgray;
+  cursor: not-allowed;
+}
+.input-container {
+  position: relative;
+}
+.input-icon {
+  position: absolute;
+  top: 32%;
+  right: 6%;
+  width: 35px;
+}
+
+.invalid {
+  border-color: red;
+}
