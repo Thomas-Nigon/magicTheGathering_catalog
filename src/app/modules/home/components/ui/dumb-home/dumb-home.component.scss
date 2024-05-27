@@ -1,5 +1,26 @@
 @import "../../../../../../styles.scss";
 
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .home-button {
   color: $darkerMain;
+}
+.home__getCard-img {
+  max-width: 300px;
+  height: auto;
+  margin-top: 2rem;
+}
+.home__getCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.home__getCard-span {
+  color: $accent;
+  cursor: pointer;
 }
