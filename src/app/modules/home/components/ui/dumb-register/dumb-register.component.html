@@ -69,6 +69,8 @@
       </article>
     </div>
 
-    <button class="registerForm-button">Register</button>
+    <button class="registerForm-button" [disabled]="!registerForm.valid">
+      Register
+    </button>
   </form>
 </main>
