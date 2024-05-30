@@ -13,16 +13,12 @@ export class SmartHomeComponent {
 
   ngOnInit(): void {
     this.cardService.getRandomCard().subscribe((fetchedData) => {
-      console.log(fetchedData);
       this.myRandomCard = fetchedData;
-      console.log(this.myRandomCard);
     });
   }
   onClick(): void {
     this.cardService.getRandomCard().subscribe((fetchedData) => {
-      console.log(fetchedData);
       this.myRandomCard = fetchedData;
-      console.log(this.myRandomCard);
     });
   }
 }

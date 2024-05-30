@@ -45,10 +45,9 @@ export class CardsService {
   }
 
   prepareCardRequest(cardName: string) {
-    console.log('cardName:', cardName);
     const words = cardName.split(' ');
     if (words.length === 1) {
-      return words[0];
+      return (this.formattedName = words[0]);
     } else {
       return (this.formattedName = words
         .map((word) => word.substring(0, 4))

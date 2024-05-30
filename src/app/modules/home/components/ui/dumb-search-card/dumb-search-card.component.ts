@@ -21,11 +21,9 @@ export class DumbSearchCardComponent {
   };
 
   onFocus(): void {
-    console.log('focus');
     this.isHidden = false;
   }
   onBlur(): void {
-    console.log('blur');
     this.isHidden = true;
   }
 }
