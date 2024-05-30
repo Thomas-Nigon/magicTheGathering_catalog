@@ -17,7 +17,7 @@ export class SmartLogInComponent {
     }),
   });
   onSubmit(): void {
-    console.log(this.userForm.value.credentials);
-    console.log('to the backend');
+    console.info(this.userForm.value.credentials);
+    console.info('to the backend');
   }
 }

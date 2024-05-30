@@ -7,9 +7,18 @@
       alt=""
     />
     <input
+      (focus)="onFocus()"
+      value="{{ searchInput }}"
       class="searchCard-input"
       type="text"
       (input)="onGetInputChange($event)"
     />
   </article>
+  <section class="searchCard__catalog" ngClass="{{ isHidden ? 'hidden' : '' }}">
+    <p *ngFor="let cardName of searchCatalog">
+      <button class="catalog-button" (click)="onSelectCard(cardName)">
+        {{ cardName }}
+      </button>
+    </p>
+  </section>
 </main>

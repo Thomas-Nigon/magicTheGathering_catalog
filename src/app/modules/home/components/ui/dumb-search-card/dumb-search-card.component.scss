@@ -30,3 +30,20 @@
 .searchCard-input:focus {
   border: 3px solid $accent;
 }
+.searchCard__catalog {
+  width: 100%;
+  max-height: 100px;
+  overflow-y: scroll;
+}
+.catalog-button {
+  all: unset;
+  cursor: pointer;
+}
+.catalog-button:hover {
+  color: $accent;
+  background-color: $lightFont;
+  width: 100%;
+}
+.hidden {
+  display: none;
+}

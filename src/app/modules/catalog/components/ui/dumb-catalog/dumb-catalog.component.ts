@@ -17,20 +17,9 @@ export class DumbCatalogComponent {
   @Input() selectedType: string = '';
 
   @Output() typeChange: EventEmitter<string> = new EventEmitter();
-  /*   @Output() colorChange: EventEmitter<string> = new EventEmitter();
-   */
+
   onTypeChange = (event: any): void => {
     const type = event.target as HTMLSelectElement;
-    console.log('inside onTypeChange:', this.selectedType);
     this.typeChange.emit((this.selectedType = type.value));
-    console.log('selectedType after event:', this.selectedType);
   };
-
-  /* onColorChange = (event: any): void => {
-    console.log('entering onColorChange');
-    console.log('event:', event);
-    const color = event.target as HTMLSelectElement;
-    console.log('inside onColorChange:', this.selectedColor);
-    this.colorChange.emit((this.selectedColor = color.value));
-  }; */
 }

@@ -19,10 +19,8 @@ export class SmartCatalogComponent {
   private cardService = inject(CardsService);
   ngOnInit(): void {
     this.cardService.getAllResults().subscribe((fetchedData) => {
-      console.log(fetchedData);
       this.cardList = fetchedData;
       this.filteredCardList = this.cardList;
-      console.log('mes cartes', this.cardList);
       getColorArray();
       getTypeArray();
     });
@@ -34,16 +32,12 @@ export class SmartCatalogComponent {
     const getTypeArray = (): void => {
       this.cardService.getTypeArray().subscribe((fetchedData) => {
         this.cardTypes = fetchedData;
-        console.log(this.cardTypes);
       });
     };
   }
 
   onGetTypeChange = (type: string): void => {
     this.selectedType = type;
-    console.log('I received a change!!, new type is:', type);
-
-    console.log('new type will be:', this.selectedType);
     this.filterCardsByType();
   };
 
@@ -53,10 +47,10 @@ export class SmartCatalogComponent {
       : (this.filteredCardList = this.cardList.filter((card) => {
           return card.type_line.includes(this.selectedType);
         }));
-    console.log('my filteredcards:', this.filteredCardList);
   };
 }
 
+// TO BE KEPT FOR LATER FEATURE
 /*  onGetColorChange = (color: string): void => {
     this.selectedColor = color;
     console.log('I received a change!!, new color is:', color);
