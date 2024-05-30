@@ -1,6 +1,6 @@
 <main class="home">
   <h1 class="home-title">welcome on MTG Deck builder</h1>
-  <app-smart-search-card />
+  <app-smart-search-card (emittedCard)="onGetCard($event)" />
 
   <section class="home__getCard">
     <h3>
@@ -8,14 +8,19 @@
       <span class="home__getCard-span" (click)="onGetclick()"> HERE</span> to
       see a random card !
     </h3>
-    @if (myCard){
+    @if (searchedCard){
 
+    <img
+      class="home__getCard-img"
+      src="{{ searchedCard.image_uris.normal }}"
+      alt=""
+    />
+
+    }@else if ( myCard ) {
     <img
       class="home__getCard-img"
       src="{{ myCard.image_uris.normal }}"
       alt=""
-    />
-
-    }
+    />}
   </section>
 </main>

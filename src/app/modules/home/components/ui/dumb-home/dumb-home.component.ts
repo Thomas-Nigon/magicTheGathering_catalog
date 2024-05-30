@@ -9,8 +9,12 @@ import { Card } from '../../../../catalog/models/card.model';
 export class DumbHomeComponent {
   @Input() myCard: Card = {} as Card;
   @Output() submit = new EventEmitter();
+  searchedCard!: Card;
 
   onGetclick(): void {
     this.submit.emit();
+  }
+  onGetCard(card: Card): void {
+    this.searchedCard = card;
   }
 }
