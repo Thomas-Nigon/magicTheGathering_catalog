@@ -17,12 +17,15 @@ export class SmartCatalogComponent {
   selectedColor: string = '';
   selectedType: string = '';
   private cardService = inject(CardsService);
+  isLoading: boolean = false;
   ngOnInit(): void {
+    this.isLoading = true;
     this.cardService.getAllResults().subscribe((fetchedData) => {
       this.cardList = fetchedData;
       this.filteredCardList = this.cardList;
       getColorArray();
       getTypeArray();
+      this.isLoading = false;
     });
     const getColorArray = (): void => {
       this.cardService.getColorArray().subscribe((fetchedData) => {
