@@ -8,6 +8,7 @@ import { Card } from '../../../../catalog/models/card.model';
 })
 export class DumbHomeComponent {
   @Input() myCard: Card = {} as Card;
+  @Input() loading!: boolean;
   @Output() submit = new EventEmitter();
   searchedCard!: Card;
 

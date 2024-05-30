@@ -10,10 +10,13 @@ import { Card } from '../../../../../models/card.model';
 export class SmartHomeComponent {
   private cardService = inject(CardsService);
   myRandomCard!: Card;
+  loading: boolean = false;
 
   ngOnInit(): void {
+    this.loading = true;
     this.cardService.getRandomCard().subscribe((fetchedData) => {
       this.myRandomCard = fetchedData;
+      this.loading = false;
     });
   }
   onClick(): void {

@@ -1,8 +1,7 @@
 @if(isLoading){
 
-<div>
-  <h1>LOADING...</h1>
-</div>
+<h1>LOADING...</h1>
+
 }@else {
 
 <main class="catalog__container">
@@ -13,14 +12,18 @@
     (change)="onTypeChange($event)"
     default="ALL"
   >
-    <option *ngFor="let type of typeSelector" value="{{ type.value }}">
+    <option
+      class="catalog-option"
+      *ngFor="let type of typeSelector"
+      value="{{ type.value }}"
+    >
       {{ type.text }}
     </option>
   </select>
 
   <section class="catalog__cardContainer">
-    @for (card of filteredcardList; track card.name) { @if (card.border_color
-    === 'black') {
+    @for (card of filteredcardList; track card.id) { @if (card.border_color ===
+    'black') {
     <article class="catalog__card">
       <img class="card-image" [src]="card.image_uris.normal" alt="" />
     </article>
