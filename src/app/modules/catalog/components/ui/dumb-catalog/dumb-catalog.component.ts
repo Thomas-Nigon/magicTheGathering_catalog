@@ -15,6 +15,7 @@ export class DumbCatalogComponent {
   @Input() typeSelector: Type[] = [];
   @Input() selectedColor: string = '';
   @Input() selectedType: string = '';
+  @Input() isLoading!: boolean;
 
   @Output() typeChange: EventEmitter<string> = new EventEmitter();
 
